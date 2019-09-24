@@ -14,6 +14,17 @@ export default class Contacts extends React.Component {
       ));
   };
 
+  componentDidUpdate(prevProps) {
+    if (this.props.country !== prevProps.country) {
+      this.props.onChange({
+        target: {
+          name: "city",
+          value: ""
+        }
+      });
+    }
+  }
+
   render() {
     const {
       valueEmail,
