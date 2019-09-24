@@ -41,6 +41,7 @@ export default class App extends React.Component {
     const name = e.target.name;
     const value = e.target.value;
     this.setState(prevState => ({
+      city: name === "country" ? "" : prevState.city,
       [name]: value,
       errors: {
         ...prevState.errors,

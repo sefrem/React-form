@@ -24,13 +24,10 @@ function Steps(props) {
       </div>
       <div className="step">
         <div
-          className={
-            currentStep === 2
-              ? "step__marker step__active"
-              : currentStep < 2
-              ? "step__marker"
-              : "step__marker step__done"
-          }
+          className={classNames("step__marker", {
+            step__active: currentStep === 2,
+            step__done: currentStep > 2
+          })}
         >
           2
         </div>
